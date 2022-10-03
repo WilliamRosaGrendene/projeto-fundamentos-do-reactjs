@@ -1,22 +1,30 @@
 import { Header } from './components/Header';
-import { Post } from './Post';
+import { Post } from './components/Post';
+import { Siderbar } from './components/Sidebar';
 
+import styles from './App.module.css'
 import'./global.css';
+
 
 export function App() {
 
   return (
-   <div>
-    <Header />
-    {/* author e content são propriedades/objetos que adiciona conteudo no componete (Post) */}
-    <Post 
-      author="Diego Fernandes"
-      content = "Um livro muito legal"  
-    />
-    <Post 
-      author="Rafael Bacana"
-      content = "Uma post muito legal"  
-    />
+    <div>
+      <Header />
+
+      <div className={styles.wrapper}>
+
+      <Siderbar />
+
+      <main>
+        {/* author e content são propriedades/objetos que adiciona conteudo no componete (Post) */}
+        <Post/>
+        
+        <Post/>
+
+      </main>
+    </div>
+
    </div>
   )
 }
